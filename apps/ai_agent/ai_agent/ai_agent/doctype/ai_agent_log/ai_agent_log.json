@@ -1,0 +1,26 @@
+{
+  "doctype": "DocType",
+  "name": "AI Agent Log",
+  "module": "AI Agent",
+  "custom": 0,
+  "istable": 0,
+  "editable_grid": 0,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname":"timestamp","fieldtype":"Datetime","label":"Timestamp"},
+    {"fieldname":"user","fieldtype":"Link","label":"User","options":"User"},
+    {"fieldname":"command_text","fieldtype":"Small Text","label":"Command"},
+    {"fieldname":"step_index","fieldtype":"Int","label":"Step #"},
+    {"fieldname":"tool","fieldtype":"Data","label":"Tool"},
+    {"fieldname":"idempotency_key","fieldtype":"Data","label":"Idempotency Key"},
+    {"fieldname":"request_hash","fieldtype":"Data","label":"Request Hash"},
+    {"fieldname":"outcome","fieldtype":"Select","label":"Outcome","options":"success\nerror"},
+    {"fieldname":"summary","fieldtype":"Small Text","label":"Summary"},
+    {"fieldname":"correlation_id","fieldtype":"Data","label":"Correlation ID"}
+  ],
+  "permissions": [
+    {"role":"System Manager","read":1,"write":1,"create":1,"delete":1},
+    {"role":"AI Agent Admin","read":1,"write":1,"create":1,"delete":1},
+    {"role":"AI Agent Operator","read":1}
+  ]
+}

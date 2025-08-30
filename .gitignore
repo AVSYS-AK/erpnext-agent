@@ -1,0 +1,19 @@
+env/
+logs/
+node_modules/
+*.pyc
+__pycache__/
+assets/
+sites/*/private/*
+sites/*/public/*
+sites/*/site_config.json
+
+# Upstream apps are separate repos — don't vendor them
+apps/frappe/
+apps/erpnext/
+
+# Any backups / archives you don't want in git
+archived/
+
+# Bench build outputs
+sites/assets/

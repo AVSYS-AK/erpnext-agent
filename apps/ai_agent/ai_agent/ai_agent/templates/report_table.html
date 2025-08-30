@@ -1,0 +1,26 @@
+{% set result = data.get("result") or data %}
+{% set rows = result.get("result") or result.get("data") or [] %}
+{% set cols = result.get("columns") or [] %}
+<html>
+<body>
+  <h3>{{ result.get("report_name") or "Report" }}</h3>
+  <table border="1" cellspacing="0" cellpadding="6">
+    <thead>
+      <tr>
+        {% for c in cols %}<th>{{ c.get("label") or c.get("fieldname") }}</th>{% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+        <tr>
+          {% if row is mapping %}
+            {% for c in cols %}<td>{{ row.get(c.get("fieldname")) }}</td>{% endfor %}
+          {% else %}
+            {% for v in row %}<td>{{ v }}</td>{% endfor %}
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

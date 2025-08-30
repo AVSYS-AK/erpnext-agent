@@ -1,0 +1,21 @@
+{
+  "doctype": "DocType",
+  "name": "AI Agent Task",
+  "module": "AI Agent",
+  "custom": 0,
+  "istable": 0,
+  "editable_grid": 0,
+  "track_changes": 1,
+  "fields": [
+    {"fieldname":"status","fieldtype":"Select","label":"Status","options":"Queued\nPlanning\nAwaiting Confirmation\nRunning\nCompleted\nFailed"},
+    {"fieldname":"correlation_id","fieldtype":"Data","label":"Correlation ID"},
+    {"fieldname":"plan_json","fieldtype":"Long Text","label":"Plan (JSON)"},
+    {"fieldname":"result_json","fieldtype":"Long Text","label":"Result (JSON)"},
+    {"fieldname":"created_by","fieldtype":"Link","label":"Created By","options":"User"}
+  ],
+  "permissions": [
+    {"role":"AI Agent Admin","read":1,"write":1,"create":1,"delete":1},
+    {"role":"AI Agent Operator","read":1,"write":1,"create":1},
+    {"role":"AI Readonly","read":1}
+  ]
+}

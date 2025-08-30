@@ -1,0 +1,8 @@
+openai>=1.50.0
+requests>=2.32.3
+tenacity>=8.5.0
+python-dotenv>=1.0.1
+chromadb>=1.0.20
+sentence-transformers>=5.1.0
+markdown-it-py>=3.0.0
+tqdm>=4.66.0
