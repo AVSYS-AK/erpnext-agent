@@ -1,32 +1,33 @@
-# Python
+# Python & node
 __pycache__/
 *.pyc
-
-# Bench/site runtime
+node_modules/
 assets/
+
+# Logs & caches
+*.log
+logs/
+config/pids/
+
+# Virtual env, env files, ollama models
+.venv/
+.env
+.ollama/
+
+# Sites runtime stuff (avoid secrets and heavy blobs)
 sites/*/public/**
 sites/*/private/**
-sites/*/locks/**
 sites/*/logs/**
 sites/*/backups/**
-sites/*/error-snapshots/**
-sites/*/database.sql.gz
-config/pids/
-config/*.pid
-config/*lock
 
-# Node & build
-node_modules/
-*.map
+# Upstream apps are installed per server (don't track)
+apps/frappe/
+apps/erpnext/
 
-# Redis / runtime dumps
-dump.rdb
+# Knowledge & archives (avoid nested repos)
+knowledge/*
+archived/
 
-# Local envs & IDE
-.env
-.venv/
-.idea/
-.vscode/
-
-# Ollama models (DO NOT COMMIT)
-.ollama/
+# Keep our first-party app tracked
+!apps/ai_agent/
+!apps/ai_agent/**
