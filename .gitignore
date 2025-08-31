@@ -1,19 +1,32 @@
-env/
-logs/
-node_modules/
-*.pyc
+# Python
 __pycache__/
+*.pyc
+
+# Bench/site runtime
 assets/
-sites/*/private/*
-sites/*/public/*
-sites/*/site_config.json
+sites/*/public/**
+sites/*/private/**
+sites/*/locks/**
+sites/*/logs/**
+sites/*/backups/**
+sites/*/error-snapshots/**
+sites/*/database.sql.gz
+config/pids/
+config/*.pid
+config/*lock
 
-# Upstream apps are separate repos — don't vendor them
-apps/frappe/
-apps/erpnext/
+# Node & build
+node_modules/
+*.map
 
-# Any backups / archives you don't want in git
-archived/
+# Redis / runtime dumps
+dump.rdb
 
-# Bench build outputs
-sites/assets/
+# Local envs & IDE
+.env
+.venv/
+.idea/
+.vscode/
+
+# Ollama models (DO NOT COMMIT)
+.ollama/
